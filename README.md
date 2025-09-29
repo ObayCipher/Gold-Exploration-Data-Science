@@ -215,3 +215,4 @@ Thanks to the **MIT Emerging Talent Program (ELO2, 2025)** for providing mentors
 [![Salih Adam GitHub Avatar](https://avatars.githubusercontent.com/u/189570008?s=96&v=4)](https://github.com/Adamx090)
 [![LinkedIn](https://img.freepik.com/premium-vector/square-linkedin-logo-isolated-white-background_469489-892.jpg?w=50)](https://www.linkedin.com/in/adam090/)
 [![Gmail](https://img.icons8.com/color/55/000000/gmail.png)](mailto:adamx090@gmail.com)
+Small update
