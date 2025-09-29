@@ -1,15 +1,18 @@
 # 🪙 Gold Pathfinder ML Project  
-### *Data-Driven Gold Exploration Using Geochemical Assay Analysis*  
+
+## *Data-Driven Gold Exploration Using Geochemical Assay Analysis*  
 
 ---
 
 ## 🎯 Objective
+
 Apply **Python-based data science and visualization** techniques to analyze **geochemical assay data** from a gold exploration program.  
 The project aims to identify **pathfinder elements** — geochemical indicators that can signal **potential gold mineralization zones** — and demonstrate how open-source tools can support data-driven mineral exploration.
 
 ---
 
 ## 🌍 Program Context
+
 This project fulfills the requirements of the  
 **MIT Emerging Talent – Experiential Learning Opportunity (ELO2)**,  
 integrating **domain expertise (Geoscience)** and **computational methods (Data Science)** to solve real-world challenges.  
@@ -19,17 +22,21 @@ The project follows the **Collaborative Data Science Project (CDSP)** milestone 
 ---
 
 ## 🧠 Motivation
+
 Traditional gold exploration relies heavily on proprietary mining software and costly fieldwork.  
-By leveraging **Python** and **open-source data analytics**, this project explores how **machine learning** and **geochemical visualization** can:  
-- Identify multi-element geochemical associations.  
+By leveraging **Python** and **open-source data analytics**, this project explores how **machine learning** and **geochemical visualization** can:
+
+- Identify multi-element geochemical associations.
 - Detect anomalies and possible gold pathfinders.  
 - Reduce exploration cost and time through reproducible analysis.  
 
 ---
 
 ## 🧩 Milestone 0 – Cross-Cultural Collaboration
+
 This milestone establishes the foundation of the project:  
-- GitHub repository setup and documentation structure.  
+
+- GitHub repository setup and documentation structure.
 - Communication and learning frameworks.  
 - Project constraints and planning for future collaboration.  
 
@@ -39,12 +46,14 @@ Although the project is currently conducted **individually**, it is designed to 
 
 ## 👤 Current Team
 
-| Role | Name | Background |
-|------|------|-------------|
+| Role        | Name         | Background                                                      |
+|-------------|--------------|------------------------------------------------------------------|
 | **Team Lead** | **Obay Salih** | Geoscientist & Data Science Trainee (MIT Emerging Talent, 2025) |
+| **Team Member** | **Salih Adam** | Chemical Engineer & Data Science Trainee (MIT Emerging Talent, 2025) |
 
 *Potential collaborators welcome for:*
-- Data visualization and automation.  
+
+- Data visualization and automation.
 - Machine learning feature analysis.  
 - Geospatial data integration.  
 
@@ -65,6 +74,7 @@ Although the project is currently conducted **individually**, it is designed to 
 ---
 
 ## 🧭 Repository Structure
+
 ELO2_Gold_Pathfinder_Project/  
 │  
 ├── data/  
@@ -91,7 +101,7 @@ ELO2_Gold_Pathfinder_Project/
 ├── reports/  
 │ ├── milestone_0_reflection.md  
 │ ├── milestone_1_problem_identification.md  
-│ ├── milestone_2_data_collection.md  
+│ ├── milestone_2_data_collection.md
 │ ├── milestone_3_analysis.md  
 │ ├── milestone_4_communication.md  
 │ └── milestone_5_final_presentation.md  
@@ -99,7 +109,6 @@ ELO2_Gold_Pathfinder_Project/
 ├── CONTRIBUTING.md  
 ├── .gitignore  
 └── README.md  
-
 
 ---
 
@@ -117,6 +126,7 @@ ELO2_Gold_Pathfinder_Project/
 ---
 
 ## 📚 Learning Outcomes
+
 - Integrate **geoscience knowledge** with **data-driven modeling**.  
 - Build a **reproducible workflow** for mining data analysis.  
 - Practice **open-source collaboration** and technical documentation.  
@@ -127,6 +137,7 @@ ELO2_Gold_Pathfinder_Project/
 ## ⚡ Quick Start Guide
 
 ### 1. Clone the Repository
+
 ```bash
 git clone https://github.com/<your-username>/ELO2_Gold_Pathfinder_Project.git
 cd ELO2_Gold_Pathfinder_Project
@@ -135,6 +146,7 @@ cd ELO2_Gold_Pathfinder_Project
 ### 2. Install Dependencies
 
 Create a virtual environment and install required libraries:
+
 ```bash
 
 python -m venv venv
@@ -145,6 +157,7 @@ pip install -r requirements.txt
 ```
 
 ### 3. Launch Jupyter Notebook
+
 ```bash
 
 jupyter notebook
@@ -152,6 +165,7 @@ jupyter notebook
 ```
 
 Open the notebook:
+
 ```bash
 
 notebook/01_data_cleaning.ipynb
@@ -160,21 +174,17 @@ notebook/01_data_cleaning.ipynb
 
 ### 4. Explore the Data
 
-* Load the ALS assay CSV (in ``/data/raw/``).
-
-* Run cleaning and visualization notebooks.
-
-* Save outputs to ``/data/processed/`` and ``/reports/``.
+- Load the ALS assay CSV files from the `/data/raw/` directory.
+- Run the data cleaning and visualization notebooks.
+- Save outputs to `/data/processed/` and `/reports/`.
 
 ---
 
 ### 🧩 Future Work
 
-* Integrate geospatial mapping (GeoPandas/Folium).
-
-* Train machine learning model for elemental correlation.
-
-* Create dashboard-style visualization for non-technical audiences.
+- Integrate geospatial mapping using **GeoPandas** and **Folium**.
+- Train a machine learning model to predict elemental correlations.
+- Develop a dashboard-style visualization for non-technical stakeholders.
 
 ---
 
@@ -186,57 +196,22 @@ Thanks to the **MIT Emerging Talent Program (ELO2, 2025)** for providing mentors
 
 ### 📫 Contact
 
-<div style="text-align: left; margin-left: 20px;">
-  <!-- GitHub Avatar -->
-  <a href="https://github.com/ObayCipher">
-    <img src="https://avatars.githubusercontent.com/u/189270536?s=96&v=4" alt="Obay Salih GitHub Avatar" width="100" height="100"/>
-  </a>
+#### Obay Salih
 
-  <!-- LinkedIn and Gmail Icons -->
-  <div style="margin-top: 10px;">
-    <a href="https://www.linkedin.com/in/obay-salih">
-      <img src="https://img.freepik.com/premium-vector/square-linkedin-logo-isolated-white-background_469489-892.jpg?w=50" alt="LinkedIn" width="50" height="50"/>
-    </a>
-    <a href="mailto:obey19955@gmail.com">
-      <img src="https://images.macrumors.com/t/clNt1S7__ZClQnfCpuabUo6XEzw%3D/1600x1200/smart/article-new/2017/06/gmail-logo.jpg" alt="Gmail" width="50" height="50" style="margin-left: 10px;"/>
-    </a>
-  </div>
+- 🌍 Sudan, China
+- **Geoscientist | MIT Emerging Talent (Data Science, 2025)**
 
-  <!-- Name, Location, and Title -->
-  <div style="margin-top: 8px; display: flex; flex-direction: column; align-items: flex-start;">
-    <strong>Obay Salih</stong>           🌍 Sudan, China</strong>
-    <div style="font-size: 14px; color: #333; margin-top: 5px;">
-    </div>
-    <strong>Geoscientist | MIT Emerging Talent (Data Science, 2025)</strong>
-    <hr style="width: 50%; margin: 5px auto;"/>
-  </div>
-</div>
+[![Obay Salih GitHub Avatar](https://avatars.githubusercontent.com/u/189270536?s=96&v=4)](https://github.com/ObayCipher)
+[![LinkedIn](https://img.freepik.com/premium-vector/square-linkedin-logo-isolated-white-background_469489-892.jpg?w=50)](https://www.linkedin.com/in/obay-salih)
+[![Gmail](https://img.icons8.com/color/55/000000/gmail.png)](mailto:obey19955@gmail.com)
 
-<div style="text-align: left; margin-left: 20px;">
-  <!-- GitHub Avatar -->
-  <a href="https://github.com/Adamx090">
-    <img src="https://avatars.githubusercontent.com/u/189570008?v=4" alt="Salih Adam GitHub Avatar" width="100" height="100"/>
-  </a>
+---
 
-  <!-- LinkedIn and Gmail Icons -->
-  <div style="margin-top: 10px;">
-    <a href="https://www.linkedin.com/in/adam090/">
-      <img src="https://img.freepik.com/premium-vector/square-linkedin-logo-isolated-white-background_469489-892.jpg?w=50" alt="LinkedIn" width="50" height="50"/>
-    </a>
-    <a href="mailto:adamx090@gmail.com">
-      <img src="https://images.macrumors.com/t/clNt1S7__ZClQnfCpuabUo6XEzw%3D/1600x1200/smart/article-new/2017/06/gmail-logo.jpg" alt="Gmail" width="50" height="50" style="margin-left: 10px;"/>
-    </a>
-  </div>
+#### Salih Adam
 
-  <!-- Name, Location, and Title -->
-  <div style="margin-top: 8px; display: flex; flex-direction: column; align-items: flex-start;">
-    <strong>Salih Adam</strong> 🌍 Sudan, Egypt
-    <div style="font-size: 14px; color: #333; margin-top: 5px;">
-    </div>
-    <strong>Chemical Engineer | MIT Emerging Talent (Data Science, 2025)</strong>
-    <hr style="width: 50%; margin: 5px auto;"/>
-  </div>
-</div>
-First change
-Second change
-Third change
+- 🌍 Sudan, Egypt  
+- **Chemical Engineer | MIT Emerging Talent (Data Science, 2025)**
+
+[![Salih Adam GitHub Avatar](https://avatars.githubusercontent.com/u/189570008?s=96&v=4)](https://github.com/Adamx090)
+[![LinkedIn](https://img.freepik.com/premium-vector/square-linkedin-logo-isolated-white-background_469489-892.jpg?w=50)](https://www.linkedin.com/in/adam090/)
+[![Gmail](https://img.icons8.com/color/55/000000/gmail.png)](mailto:adamx090@gmail.com)
