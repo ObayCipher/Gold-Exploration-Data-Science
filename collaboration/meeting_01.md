@@ -54,3 +54,5 @@ plus `README.md`, `CONTRIBUTING.md`, and `LICENSE`.
 - Complete and review all Milestone 0 files.  
 - Prepare the repository for tagging on **30 September 2025**.  
 - Schedule Meeting 02 after the Milestone 0 submission.
+
+<!--This can be change at anytime-->
