@@ -93,9 +93,9 @@ Boyle, R. W. (1979). *The geochemistry of gold and its deposits.* Geological Sur
 
 Carranza, E. J. M. (2009). *Geochemical anomaly and mineral prospectivity mapping in GIS.* Elsevier.
 
-![Cracknell, M. J., & Reading, A. M. (2014). Geological mapping using machine learning. *Computers & Geosciences, 72*, 84–95.](https://doi.org/10.1016/j.cageo.2014.07.003)
+[Cracknell, M. J., & Reading, A. M. (2014). Geological mapping using machine learning. *Computers & Geosciences, 72*, 84–95.](https://doi.org/10.1016/j.cageo.2014.07.003)
 
-![Dominy, S. C., et al. (2021). Determination of gold particle characteristics for sampling protocol optimisation. *Minerals, 11*(10), 1109.](https://doi.org/10.3390/min11101109)
+[Dominy, S. C., et al. (2021). Determination of gold particle characteristics for sampling protocol optimisation. *Minerals, 11*(10), 1109.](https://doi.org/10.3390/min11101109)
 
 EPA. (2015). *Regional guidance on handling chemical concentration data near detection limits in risk assessments.* U.S. Environmental Protection Agency.
 
@@ -105,8 +105,8 @@ Pawlowsky-Glahn, V., & Buccianti, A. (2011). *Compositional data analysis: Theor
 
 Reimann, C., Filzmoser, P., & Garrett, R. G. (2002). *Statistical data analysis explained.* Wiley.
 
-![Rodriguez-Galiano, V. F., et al. (2015). Machine learning predictive models for mineral exploration. *Ore Geology Reviews, 71*, 789–804.](https://doi.org/10.1016/j.oregeorev.2015.03.001)
+[Rodriguez-Galiano, V. F., et al. (2015). Machine learning predictive models for mineral exploration. *Ore Geology Reviews, 71*, 789–804.](https://doi.org/10.1016/j.oregeorev.2015.03.001)
 
 USGS. (2015). *New and refined methods of trace analysis useful in geochemical exploration.* U.S. Geological Survey.
 
-![Zheng, Y., et al. (2022). Pathfinder elements for gold exploration in altered rocks. *Frontiers in Earth Science, 10*, 952031.](https://doi.org/10.3389/feart.2022.952031)
+[Zheng, Y., et al. (2022). Pathfinder elements for gold exploration in altered rocks. *Frontiers in Earth Science, 10*, 952031.](https://doi.org/10.3389/feart.2022.952031)
