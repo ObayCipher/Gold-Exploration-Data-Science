@@ -1,5 +1,6 @@
 # Literature Library
-# í³š Literature Review  
+
+## ğŸ“šLiterature Review  
 
 ## *Geochemical Pathfinders, Coarse Gold Challenges, and Data-Driven Exploration Methods*
 
