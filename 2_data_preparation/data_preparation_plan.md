@@ -121,6 +121,6 @@ All preparation steps are:
 
 ## ⚠️ WARNINGS
 
-### Some data may gave error in the terminal messege and that due to Text not Value (Float)
+### Some data may gave error in the terminal message and that due to Text not Value (Float) but it will appear as NAN not big problem its can be handled when because it will not affect the analysis
 <!--✅ This preparation plan ensures **full scientific, technical, and audit
 compliance** for Milestone 2 under the ELO2 framework.-->
