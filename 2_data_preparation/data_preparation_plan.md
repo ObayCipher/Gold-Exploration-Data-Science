@@ -119,5 +119,8 @@ All preparation steps are:
 
 ------------------------------------------------------------------------
 
+## ⚠️ WARNINGS
+
+### Some data may gave error in the terminal messege and that due to Text not Value (Float)
 <!--✅ This preparation plan ensures **full scientific, technical, and audit
 compliance** for Milestone 2 under the ELO2 framework.-->
