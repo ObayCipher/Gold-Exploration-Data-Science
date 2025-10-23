@@ -32,8 +32,9 @@ import logging
 from pathlib import Path
 from typing import Tuple, List
 
-import numpy as np
-import pandas as pd
+import numpy as np  # pylint: disable=import-error
+import pandas as pd  # pylint: disable=import-error
+
 
 
 # -----------------------------------------------------------------------------
@@ -48,11 +49,13 @@ PROCESSED_DIR = PROJECT_ROOT / "1_datasets" / "processed"
 PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
 
 # Expected raw file names (adjust here if your filenames differ)
-CORE_FILES: List[str] = ["An1_Core_raw.csv", "An7_Cores_DD_raw.csv"]
-RC_FILES: List[str] = ["An1_RC_raw.csv"]
-CHIP_FILES: List[str] = ["An6_Chip_raw.csv", "An7_Chip_raw.csv"]
-TRENCH_FILES: List[str] = ["An6-Trenchs_Result_raw.csv"]
-GRAB_FILES: List[str] = ["An6-Grap_raw.csv", "An7_Grap_raw.csv"]
+# Make sure these exist in: 1_datasets/raw/
+CORE_FILES: List[str] = ["An1-Core.csv", "An7_Cores_DD.csv"]
+RC_FILES: List[str] = ["An1-RC.csv"]
+CHIP_FILES: List[str] = ["An6_Chip.csv", "An7_Chip.csv"]
+TRENCH_FILES: List[str] = ["An6-Trenchs Result.csv"]
+GRAB_FILES: List[str] = ["An6-Grap.csv", "An7_Grap.csv"]
+
 
 # Output file names
 CORE_OUT = PROCESSED_DIR / "core_assays_clean.csv"
