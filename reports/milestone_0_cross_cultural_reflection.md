@@ -1,5 +1,9 @@
 # Milestone 0 – Cross‑Cultural Collaboration
 
+**Gold Pathfinder ML Project – MIT Emerging Talent (ELO2)**  
+**Team:** Obay Salih · Salih Adam  
+**Date:** September 2025
+
 ## Summary
 
 This milestone established communication norms, expectations, constraints, and learning goals for the ELO2 Gold Pathfinder ML Project.

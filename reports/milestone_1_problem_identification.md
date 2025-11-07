@@ -1,5 +1,9 @@
 # Milestone 1 – Problem Identification
 
+**Gold Pathfinder ML Project – MIT Emerging Talent (ELO2)**  
+**Team:** Obay Salih · Salih Adam
+**Date:** October 2025
+
 ## Domain Summary
 
 Gold exploration suffers from high uncertainty due to nugget effect, coarse gold distribution, and limited early‑stage data. Pathfinder elements (As, Sb, Bi, Cu, Zn) help indicate mineralization halos.
@@ -34,4 +38,5 @@ Pathfinder behavior in orogenic systems; geochemical halos; vectoring via ratios
 
 - Clear problem framing  
 - Domain‑aligned research question  
-- Feasible analytic plan for M2–M3  
+- Feasible analytic plan for M2–M3
+  
