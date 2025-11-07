@@ -1,229 +1,212 @@
-# 📘 **Milestone 3 --- Data Exploration Analysis Report**
+# Milestone 3 – Data Analysis & Geochemical Vectoring  
 
-## *Gold Pathfinder ML Project -- MIT Emerging Talent (ELO2)*
+**Project:** Gold Pathfinder ML – Shamkya Mining Project  
+**Program:** MIT Emerging Talent – ELO2  
+**Period:** 26 Oct – 7 Nov 2025  
 
-**Authors:** Obay Salih · Salih Adam\
-**Date:** November 2025
+---
 
-------------------------------------------------------------------------
+## 1. Purpose of this milestone
 
-## 🎯 **Purpose of Milestone 3**
+The goal of Milestone 3 is to **learn from the data** before building any predictive models.  
+Using the merged dataset `gold_assays_final.csv`, we:
 
-The goal of Milestone 3 is to conduct a **full exploratory data analysis
-(EDA)** of the cleaned and processed ALS assay dataset prepared in
-Milestone 2.\
-This builds the foundation for Milestone 4 (Data Analysis & Modeling).
+- Characterized the **distribution of gold (Au)** grades.
+- Quantified relationships between **Au and pathfinder elements**.
+- Calculated **geochemical ratios** (e.g. Sb/As) that can help vector toward the center of mineralization.
+- Produced a set of **2D and 3D visualizations** to support geological interpretation and later machine learning work.
 
-This EDA focuses on:
+All analysis is reproducible in the `3_data_exploration` notebooks and summarized in CSV tables under `3_data_exploration/outputs/`.
 
-- Understanding data structure
-- Evaluating distributions and transformations
-- Identifying correlations and potential pathfinder elements
-- Visualizing multi-element relationships
-- Detecting patterns relevant to gold mineralization
+---
 
-------------------------------------------------------------------------
+## 2. Gold distribution – grade behaviour and nugget effect
 
-## 📁 **Dataset Analyzed**
+Gold values (`au_ppm`) in the Shamkya dataset show a **strongly skewed distribution**, typical of orogenic gold systems affected by coarse-gold (nugget) behaviour:
 
-File used:
+- Number of samples: **1,754**
+- Minimum Au: **0.001 ppm**
+- Median Au: **0.010 ppm**
+- 75th percentile: **5.0 ppm**
+- 99th percentile: ~**7.7 ppm**
+- Maximum: **100 ppm**
 
-``` text
-1_datasets/processed/gold_assays_final.csv
-```
+Most samples are low-grade, but a small number of high-grade intervals generate a long upper tail and very large standard deviation. This behaviour is consistent with **coarse gold hosted in narrow shoots or veins**, where small changes in sampling position capture or miss nuggets.
 
-Contents:
+### 2.1 3D and 2D spatial distributions
 
-- Au (gold) concentration in ppm
-- Major & trace elements (As, Sb, Bi, Cu, Zn, Pb, Ag, Fe, Mn, etc.)
-- Metadata (`sample_id`, `sample_type`, `anomaly`, `project_area`)
-- All cleaned and standardized values from Milestone 2
+Using the easting, northing and RL coordinates provided by the mining company, we created:
 
-------------------------------------------------------------------------
+- **`m3_3d_surface_Au.png`** – a 3D surface-style representation of Au (ppm) in space.  
+  - The plot shows **sharp spikes** where Au exceeds several ppm, surrounded by broad low-grade zones.  
+  - These spikes are likely associated with narrow mineralized structures.
 
-## 🧠 **1. Data Structure Summary**
+- **`m3_2d_contour_Au.png`** – a 2D contoured plan map of Au grades.  
+  - Hotspots cluster in the **central–eastern part of the grid**, surrounded by lower-grade halos.  
+  - This provides a first visual indication of a **core zone** of mineralization.
 
-### ✔ Number of Samples
+Interactive versions of these views are stored as:
 
-**Total samples:** (Varies by upload)\
-From combined core, RC, chip, trench, and grab datasets.
+- `m3_interactive_3D_Au_distribution.html`  
+- `m3_interactive_3D_Au_surface.html`  
 
-### ✔ Number of Variables
+These allow panning, rotating, and zooming to explore the subsurface behaviour of Au.
 
-**Columns:** Gold + 32 multi-element geochemistry + metadata.
+**Key insight:**  
+Gold is highly localized in space; this supports the need for pathfinder-based vectoring rather than relying on Au alone.
 
-### ✔ Missing Data
+---
 
-- Missing values were minimal after cleaning (\<2--5%).
-- Below-detection values properly replaced during Milestone 2
-    processing using LOD/2.
+## 3. Element correlations with gold
 
-### ✔ Sample Types
+To understand which elements behave as geochemical pathfinders, we computed a correlation matrix for Au and major trace elements:
 
-The dataset includes:
+- Elements included: **Au, As, Sb, Bi, Cu, Zn, Pb, Ag** (all in ppm).
 
-- **Core samples** (most structured & high-quality)
-- **RC samples**
-- **Chip samples**
-- **Trench samples**
-- **Grab samples**
+The full matrix is stored in:
 
-Each sample type will be visually compared in Milestone 4.
+- `3_data_exploration/outputs/m3_correlation_matrix.csv`  
 
-------------------------------------------------------------------------
+The column `m3_gold_correlations.csv` contains the same information but sorted by correlation with Au.
 
-## 📊 **2. Distribution Analysis**
+### 3.1 Summary of correlations with Au
 
-## ✔ Gold (Au)
+From `m3_gold_correlations.csv`:
 
-- Extremely skewed due to the **coarse gold effect**.
-- Heavy right tail (outliers present).
-- Log-transform improves interpretability but does **not** remove
-    coarse nugget behavior (expected).
+- **Sb (sb_ppm)** – moderate positive correlation with Au (~**0.47**)  
+- **Ag (ag_ppm)** – positive correlation (~**0.30**)  
+- **Bi (bi_ppm)** – weak–moderate positive correlation (~**0.17**)  
+- **Cu (cu_ppm)** – weak positive correlation (~**0.05**)  
+- **Pb (pb_ppm)** – weak positive correlation (~**0.05**)
 
-### ✔ Pathfinder Elements
+Negative correlations:
 
-(As, Sb, Bi, Cu, Zn)
+- **Zn (zn_ppm)** – moderate negative correlation with Au (~**−0.25**)  
+- **As (as_ppm)** – slight negative correlation (around **−0.07**)
 
-- Moderately skewed.
-- Log-transforms normalize the distributions well.
-- Good candidates for correlation and predictive modeling.
+This pattern suggests:
 
-### ✔ Histograms & Boxplots
+- **Sb and Ag** behave as **positive pathfinders**, increasing where Au is elevated.  
+- **Zn** tends to be more abundant in **less mineralized or more distal zones**, which is consistent with some alteration halos.  
+- The weak behaviour of As with Au may reflect complex fluid histories or lithological control.
 
-Generated for:
+---
 
-- Au (raw)
-- Au (log10)
-- As, Sb, Bi, Cu
-- Multi-element suite
+## 4. Pathfinder ratios as vectoring tools
 
-Figures stored under:
+The ELO2 guideline note states:
 
-``` text
-3_data_exploration/figures/
-```
+> “Systematic sampling and analysis of pathfinder ratios (e.g., As/Hg, Sb/As) can help you vector towards the center of the mineralization.”
 
-------------------------------------------------------------------------
+In the current assay dataset, **Hg was not analysed**, so we cannot compute real As/Hg ratios from the ALS results. Instead, we focus on:
 
-## 🔗 **3. Correlation Analysis**
+- **Sb/As ratio** — a classic temperature / zonation indicator.  
+- **Cu/Zn ratio** — often sensitive to alteration and sulphide assemblages.
 
-### ✔ Gold (Au) Correlations
+These ratios were calculated and saved to:
 
-Most meaningful positive correlations observed with:
+- `3_data_exploration/outputs/m3_pathfinder_ratios.csv`  
 
-- **As (Arsenic)**
-- **Sb (Antimony)**
-- **Bi (Bismuth)**
-- **Cu (Copper)**
-- **Zn (Zinc)**
+This table includes: `sample_id`, `sb_as_ratio`, `cu_zn_ratio` (where denominators > 0), and `au_ppm`.
 
-These elements consistently appear in the literature as **pathfinders in
-hydrothermal and orogenic systems**.
+### 4.1 Correlation of ratios with Au
 
-### ✔ Heatmap
+The file:
 
-Full correlation heatmap generated using:
+- `m3_ratio_vs_gold_correlations.csv`  
 
-``` python
-sns.heatmap(df.corr(), cmap="coolwarm", annot=False)
-```
+shows correlations between the ratios and Au:
 
-Saved under:
+- **Sb/As ratio** – moderately positive correlation with Au (~**0.45**).  
+  - Higher Sb/As ratios tend to occur in higher Au intervals.  
+  - This suggests Sb becomes relatively enriched with respect to As toward or within the mineralized core.
 
-``` text
-3_data_exploration/figures/correlation_heatmap.png
-```
+- **Cu/Zn ratio** – very weak relationship with Au (correlation close to zero).  
+  - Cu/Zn does not provide a strong vectoring signal in this dataset.
 
-### ✔ Sorted Correlation Ranking
+### 4.2 Spatial and ratio visualizations
 
-A bar chart showing the top 15 correlations with Au was created and will
-be used in Milestone 4 for feature selection.
+Several visualizations help interpret these ratios:
 
-------------------------------------------------------------------------
+- **`m3_scatter_ratios_vs_Au.png`**  
+  - Scatterplot of Sb/As against Au grade quartiles.  
+  - Higher Sb/As values tend to align with the upper Au quartiles.
 
-## 📈 **4. Multivariate Relationships**
+- **`m3_hist_As_Hg_ratio.png`**  
+  - A conceptual histogram using synthetic As/Hg ratio values to illustrate how such a ratio would be interpreted in practice.  
+  - This is clearly documented as **synthetic** and is included for teaching/explanatory purposes only.
 
-### ✔ Pairplots
+- **`m3_map_clusters.png`**  
+  - Plan-view scatter plot of **k-means clusters (k=3)** based on pathfinder ratios and Au.  
+  - Clusters can be interpreted as:
+    - Cluster A – core, high-Au / high Sb/As  
+    - Cluster B – transitional zone  
+    - Cluster C – distal / background
 
-Pairwise scatterplots between Au and key pathfinders:
+- **`m3_3d_AsSbHg_index.png` & `m3_interactive_3D_index_plus_highAu.html`**  
+  - 3D visualization of a composite index built from As, Sb, and a synthetic Hg component, coloured in space.  
+  - This index highlights volumes where **pathfinder responses are strongest**, and these zones overlap with the Au hotspots in the Au distribution plots.
 
-- Au vs As
-- Au vs Sb
-- Au vs Bi
-- Au vs Cu
+**Key insight:**  
+Even without Hg assays, the **Sb/As ratio** provides a useful vectoring signal. Higher Sb/As ratios tend to be associated with higher Au grades and cluster spatially near the main gold anomaly.
 
-These reveal:
+---
 
-- Positive but noisy trends (coarse gold influence)
-- Clear clusters of multi-element anomalies
+## 5. Summary of findings
 
-### ✔ Sample-Type Patterns
+1. **Gold distribution is highly skewed**, with a few high-grade intervals (up to 100 ppm) and many low-grade samples. This is consistent with coarse-gold (nugget) behaviour and strongly localized mineralization.
 
-Gold values differ substantially across sample types:
+2. **Sb and Ag show the clearest positive correlation with Au**, followed by Bi. Zn is negatively correlated, and As has a weak relationship with gold in this dataset.
 
-- **Core:** More stable patterns, fewer extreme outliers
-- **Chip & Grab:** Greater variability
-- **Trench:** Moderate correlations
-- **RC:** Balanced behavior
+3. **The Sb/As ratio correlates positively with Au** and shows spatial clustering near the main Au anomaly. This confirms that **pathfinder ratios can be used as vectoring tools** towards the mineralized center.
 
-------------------------------------------------------------------------
+4. **3D and 2D Au maps** highlight a central–eastern hotspot surrounded by lower-grade halos, supporting the interpretation of a structurally controlled ore shoot.
 
-## 🔍 **5. Early Insights & Interpretation**
+5. Synthetic examples using As/Hg-like behaviour and composite indices demonstrate how **ratio-based vectoring and clustering** can be extended when more elements are available.
 
-Based on the EDA:
+---
 
-### 🔥 **Strong Candidate Pathfinder Elements:**
+## 6. Implications for next milestones
 
-- ✔ Arsenic (As)
-- ✔ Antimony (Sb)
-- ✔ Bismuth (Bi)
-- ✔ Copper (Cu)
-- ✔ Zinc (Zn)
+For **Milestone 4 (Communicating Results)** and later ML work:
 
-### 🧭 **Geochemical Patterns:**
+- Use **Sb, Ag, Bi, Zn, and Sb/As** as key inputs for any classification or clustering models aimed at predicting high-gold intervals.
+- When communicating with non-technical stakeholders, emphasize:
+  - The **spatial concentration** of gold.
+  - The role of **Sb/As ratio** as a practical vectoring indicator.
+  - The limitations arising from missing Hg assays and nugget effects.
+- Consider building simple models that predict **“high Au vs low Au”** using Sb, Ag, Bi, Zn, and Sb/As rather than continuous Au values, to reduce the impact of coarse-gold variability.
 
-- Pathfinder elements cluster strongly even when Au is variable
-- Some anomalies show multi-element enrichment without high Au
-- These zones may indicate potential mineralization halos
+---
 
-### 📌 **Implications for Milestone 4:**
+## 7. Files produced in this milestone
 
-- These elements will be selected for initial modeling
-- Gold will be classified (High / Low) instead of treated as
-    continuous
-- A log-transformed dataset will be prepared for modeling
-- Dimensionality reduction (PCA) will be evaluated
+#### **Notebooks**
 
-------------------------------------------------------------------------
+- `3_data_exploration/01_eda_overview.ipynb`  
+- `3_data_exploration/02_eda_distributions_correlations.ipynb`  
+- `3_data_exploration/03_visualization_advanced.ipynb`  
 
-## 🧪 **6. Deliverables Completed in Milestone 3**
+#### **Outputs (tables)**
 
-  ------------------------------------------------------------------------
-  
-| Deliverable           | Status | Location                                   |
-|-----------------------|--------|--------------------------------------------|
-| EDA Plan              | ✅     | `3_data_exploration/eda_plan.md`           |
-| EDA Notebook          | ✅     | `3_data_exploration/03_EDA.ipynb`          |
-| Summary Tables        | ✅     | `3_data_exploration/outputs/`              |
-| Figures               | ✅     | `3_data_exploration/figures/`              |
-| Correlation Analysis  | ✅     | Included in notebook & this report        |
-| Milestone Report      | ✅     | `reports/milestone_3_analysis.md`         |
+- `3_data_exploration/outputs/m3_gold_summary_statistics.csv`  
+- `3_data_exploration/outputs/m3_correlation_matrix.csv`  
+- `3_data_exploration/outputs/m3_gold_correlations.csv`  
+- `3_data_exploration/outputs/m3_pathfinder_ratios.csv`  
+- `3_data_exploration/outputs/m3_ratio_vs_gold_correlations.csv`  
 
-------------------------------------------------------------------------
+#### **Figures & interactive views**
 
-## 🎯 **7. Conclusion**
+- `3_data_exploration/figures/m3_3d_surface_Au.png`  
+- `3_data_exploration/figures/m3_2d_contour_Au.png`  
+- `3_data_exploration/figures/m3_map_clusters.png`  
+- `3_data_exploration/figures/m3_3d_AsSbHg_index.png`  
+- `3_data_exploration/figures/m3_scatter_ratios_vs_Au.png`  
+- `3_data_exploration/figures/m3_hist_As_Hg_ratio.png`  
+- `3_data_exploration/figures/m3_interactive_3D_Au_distribution.html`  
+- `3_data_exploration/figures/m3_interactive_3D_Au_surface.html`  
+- `3_data_exploration/figures/m3_interactive_3D_index_plus_highAu.html`  
 
-Milestone 3 successfully revealed:
+<!-- This completes **Milestone 3 – Data Analysis**. -->
 
-- The structure and quality of the dataset
-- Strong pathfinder element signatures
-- Correlation patterns useful for modeling
-- Distribution characteristics that will inform classification and
-    feature engineering
-
-This milestone provides the analytical foundation required to progress
-to:
-
-👉 **Milestone 4 --- Data Analysis & Modeling**
-
+---
