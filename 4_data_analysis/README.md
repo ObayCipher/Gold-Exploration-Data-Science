@@ -72,13 +72,21 @@ Key findings:
 
 ---
 
-### 🔗 Interactive 3D Views
+### 🔗 Interactive 3D Views (HTML)
 
 These HTML files open in any browser:
 
 * [Interactive 3D Au Distribution](../assets/images/m3_interactive_3D_Au_distribution.html)
 * [Interactive 3D Au Surface](../assets/images/m3_interactive_3D_Au_surface.html)
 * [Interactive 3D Pathfinder Index + High Au](../assets/images/m3_interactive_3D_index_plus_highAu.html)
+
+---
+
+### 📦 Download All Interactive Views (ZIP)
+
+For offline viewing or sharing, you can download all interactive HTML files as a single archive:
+
+👉 [Download interactive 3D visualizations (ZIP)](./interactive_zip/m3_interactive_html.zip)
 
 ---
 
