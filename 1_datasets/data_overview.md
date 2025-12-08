@@ -25,8 +25,10 @@ datasets include:
     `An7_Cores_DD.xlsx`)
 - **RC drilling samples** (e.g., `An1-RC.xlsx`)
 - **Chip samples** (e.g., `An6_Chip.xlsx`, `An7_Chip.xlsx`)
-- **Trench and grab samples** (e.g., `An6-Trenchs Result.xlsx`,
+- **Trench and grab samples** (e.g., `An6-Trenches Result.xlsx`,
     `An6-Grap.xlsx`, `An7_Grap.xlsx`)
+- **Simplified datasets**: Three datasets for RC, core and trenches samples,
+  made simple by keeping only the needed feature columns for comparison analysis.
 
 These files contain:
 
